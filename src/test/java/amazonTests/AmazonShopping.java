@@ -21,7 +21,7 @@ public class AmazonShopping extends BaseClass{
     LoginPage loginPage;
     AddProductToCart addProductToCart;
     AndroidDriver driver;
-    GenericMethods genericmethods;
+    
 
     boolean status=true;
 
@@ -53,8 +53,10 @@ public class AmazonShopping extends BaseClass{
         addProductToCart.SelectProduct();
         //Get the product name and price from product search page
         addProductToCart.getProductInfo();
-       
+       //swipe down to Buy Now button and click
         addProductToCart.swipeDownToClickBuyNow();
+        //click continue with default payment method
+        addProductToCart.clickOnContinue();
         //Verify the product name and price from between product search and checkout page
         addProductToCart.verifyProductInfo();
        

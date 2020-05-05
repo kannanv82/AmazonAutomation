@@ -41,7 +41,7 @@ public class DriverManager {
         caps.setCapability("deviceName", prop.getProperty("DeviceID"));
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformName", "Android");
-		caps.setCapability("platformVersion", 10);
+		caps.setCapability("platformVersion", 10.0);
         caps.setCapability("app", System.getProperty("user.dir") + prop.getProperty("AppPath"));
         caps.setCapability("appPackage", prop.getProperty("Package"));
         caps.setCapability("appActivity", prop.getProperty("Activity"));
