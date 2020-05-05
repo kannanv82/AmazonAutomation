@@ -2,6 +2,7 @@ package amazonTests;
 
 import org.testng.annotations.Test;
 
+import Utilities.GenericMethods;
 import amazon.Pages.AddProductToCart;
 import amazon.Pages.LoginPage;
 import amazon.Pages.WelcomePage;
@@ -20,6 +21,7 @@ public class AmazonShopping extends BaseClass{
     LoginPage loginPage;
     AddProductToCart addProductToCart;
     AndroidDriver driver;
+    GenericMethods genericmethods;
 
     boolean status=true;
 
@@ -47,8 +49,14 @@ public class AmazonShopping extends BaseClass{
         addProductToCart.SearchBox();
         //"Searched Item in search box"
         addProductToCart.SearchItemFromSearchBox();
-        //"Select product and  verify product info"
+      //"Select product "
         addProductToCart.SelectProduct();
+        //Get the product name and price from product search page
+        addProductToCart.getProductInfo();
+       
+        addProductToCart.swipeDownToClickBuyNow();
+        //Verify the product name and price from between product search and checkout page
+        addProductToCart.verifyProductInfo();
        
     }
 
